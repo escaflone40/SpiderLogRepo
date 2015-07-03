@@ -1,0 +1,41 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Spider Log API
+Provides services for the spider log app family
+
+# Group Spiders
+Access to Spider resources
+
+## My Spiders [/spiders{?page,size}]
+### Get all my spiders sightings [GET]
+
++Parameters
+    + page (required, number, 1 )... page number
+    + size (required, number, 10 )... page size 
++ Request
+
+    + Headers
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+        
++ Response 200 (application/json)
+
+        {
+            "page" :
+            {
+                "number" : 1,
+                "size" : 10,
+                "totalPages" : 20
+            },
+            [
+                {
+                    "sightedAt" : "2014-08-29T07:00",
+                    "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                    "description" : "Spider I saw on the train",
+                    "tags" : [
+                        "stripy"
+                    ]
+                }
+            ]
+        }
